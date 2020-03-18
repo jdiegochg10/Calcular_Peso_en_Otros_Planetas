@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tu Peso en un lugar donde pesas menos</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <!--h1 titulo-->
+        <h1>Tu peso en otro planeta</h1>
+        <!--Parrafo-->
+        <p>En la tierra pesas distinto que en Marte o Júpiter</p>
+        <script type="text/JavaSCript">
+            var usuario = prompt("¿Cuál es tu peso?.");
+            var planeta = prompt("¿Elige tu Planeta \n 1. es Marte 2.es Júpiter?.");
+            /*Convierte input en numero flotante o con punto decimal*/
+            peso = parseFloat(usuario);
+            planeta = parseInt(planeta);
+            var g_tierra = 9.8;
+            var g_marte = 3.7;
+            var g_jupiter = 24.8;
+            //var peso = 77;
+            var peso_final, planeta_descrito;
+            
+            if (planeta == 1)
+            {
+                peso_final = (usuario * g_marte) / g_tierra;
+                planeta_descrito = "marte";
+            }            
+            else if (planeta == 2)
+            {
+                peso_final = (usuario * g_jupiter) / g_tierra;
+                planeta_descrito = "Jupiter";
+            }
+            else 
+            {
+                peso_final = 1000000;
+                planeta_descrito = "Desconocido";
+            }
+            /*PasrseInt Conviente las variables del tipo flotante al tipo Entero*/
+            peso_final = parseInt(peso_final);
+            //alert(peso_final);
+            document.write("Tu peso en " + planeta_descrito + " es: " + '<strong>' + peso_final + "kg" + '</stong>');
+        </script>
+    </body>
+</html>
